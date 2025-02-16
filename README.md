@@ -42,9 +42,10 @@ http://localhost:8080/api/auth
 "token":  "..."
 }
 ```
-***В СЛЕДУЮЩИХ ЗАПРОСАХ НУЖНО ОБЯЗАТЕЛЬНО ПЕРЕДАТЬ В ЗАГОЛОВКЕ
-Key: Authorization
-Value: bearer \<token\>***
+***В СЛЕДУЮЩИХ ЗАПРОСАХ НУЖНО ОБЯЗАТЕЛЬНО ПЕРЕДАТЬ В ЗАГОЛОВКЕ***
+
+***Key: Authorization***
+***Value: bearer \<token\>***
 
 2. Подарить монеты
 ```bash 
@@ -53,25 +54,25 @@ http://localhost:8080/api/sendCoin
 Входные данные в теле запроса
 ```json
 {
-"toUser":"natasha", // получатель
-"amount":300 // количество монет
+"toUser":"natasha",  получатель
+"amount":300  количество монет
 }
 ```
 3. Получить информацию о сотруднике
 Ответ
 ```json
 {
-"coinHistory":  { // история переводов
-"Received":  [ // полученные монеты
+"coinHistory":  {  история переводов
+"Received":  [  полученные монеты
 {
 "Name":  "masha",
 "Num":  300
 }
 ],
-"Send":  [] // подаренные монеты
+"Send":  []  подаренные монеты
 },
 "coins":  300,
-"inventory":  [ // купленные предметы
+"inventory":  [  купленные предметы
 {
 "Name":  "umbrella",
 "Num":  5
