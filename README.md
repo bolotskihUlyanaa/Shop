@@ -51,28 +51,28 @@ http://localhost:8080/api/auth
 ```bash 
 http://localhost:8080/api/sendCoin
 ```
-Входные данные в теле запроса
+Входные данные в теле запроса (получатель и количество монет)
 ```json
 {
-"toUser":"natasha",  получатель
-"amount":300  количество монет
+"toUser":"natasha",  
+"amount":300  
 }
 ```
-3. Получить информацию о сотруднике
+3. Получить информацию о сотруднике (история переводов, баланс, мерч)
 Ответ
 ```json
 {
-"coinHistory":  {  история переводов
-"Received":  [  полученные монеты
+"coinHistory":  {  
+"Received":  [  
 {
 "Name":  "masha",
 "Num":  300
 }
 ],
-"Send":  []  подаренные монеты
+"Send":  []  
 },
 "coins":  300,
-"inventory":  [  купленные предметы
+"inventory":  [  
 {
 "Name":  "umbrella",
 "Num":  5
