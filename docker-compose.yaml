@@ -1,0 +1,37 @@
+services:
+  db:
+    image: postgres
+    container_name: postgres_db
+    environment:
+      POSTGRES_HOST: localhost
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: shop
+      POSTGRES_SSLMODE: disable
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d shop"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+  
+  server:
+    build:
+      context: ./Shop
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      HOST_POSTGRES: db
+      USERNAME_POSTGRES: admin
+      PASSWORD_POSTGRES: password
+      DBNAME_POSTGRES: shop
+      SSLMODE_POSTGRES: disable
+      PORT_POSTGRES: 5432
+      SIGNING_KEY: qrkjk#4#%35FSFJlja#4353KSFjH
+    depends_on:
+      db:
+        condition: service_healthy
+    tty: true
+    stdin_open: true
