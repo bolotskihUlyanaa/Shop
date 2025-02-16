@@ -32,14 +32,14 @@ http://localhost:8080/api/auth
 Входные данные в теле запроса
 ```json
 {
-"username":"ulia",
-"password":"password"
+ "username":"ulia",
+ "password":"password"
 }
 ```
 В ответ приходит сгенерированный JWT
 ```json
 {
-"token":  "..."
+ "token":  "..."
 }
 ```
 ***В СЛЕДУЮЩИХ ЗАПРОСАХ НУЖНО ОБЯЗАТЕЛЬНО ПЕРЕДАТЬ В ЗАГОЛОВКЕ***
@@ -54,30 +54,30 @@ http://localhost:8080/api/sendCoin
 Входные данные в теле запроса (получатель и количество монет)
 ```json
 {
-"toUser":"natasha",  
-"amount":300  
+ "toUser":"natasha",  
+ "amount":300  
 }
 ```
 3. Получить информацию о сотруднике (история переводов, баланс, мерч)
 Ответ
 ```json
 {
-"coinHistory":  {  
-"Received":  [  
-{
-"Name":  "masha",
-"Num":  300
-}
-],
-"Send":  []  
-},
-"coins":  300,
-"inventory":  [  
-{
-"Name":  "umbrella",
-"Num":  5
-}
-]
+ "coinHistory":  {  
+  "Received":  [
+   {
+    "Name":  "masha",
+    "Num":  300
+   }
+  ],
+  "Send":  []
+ },
+ "coins":  300,
+ "inventory":  [  
+  {
+   "Name":  "umbrella",
+   "Num":  5
+  }
+ ]
 }
 ```
 4.  Покупка мерча
